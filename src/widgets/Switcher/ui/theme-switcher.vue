@@ -1,17 +1,21 @@
 <script lang="ts" setup>
-import { Moon, Sun } from "lucide-vue-next";
+import { Moon, Sun } from 'lucide-vue-next';
 
 const colorMode = useColorMode();
 
 const toggleColorMode = () => {
-  return (colorMode.preference = colorMode.preference === "light" ? "dark" : "light");
+  return (colorMode.preference =
+    colorMode.preference === 'light' ? 'dark' : 'light');
 };
 </script>
 
 <template>
   <div class="theme-switcher">
     <div class="theme-switcher__icon" @click="toggleColorMode">
-      <Moon class="theme-switcher__icon--moon" v-if="colorMode.preference === 'dark'" />
+      <Moon
+        class="theme-switcher__icon--moon"
+        v-if="colorMode.preference === 'dark'"
+      />
       <Sun class="theme-switcher__icon--sun" v-else />
     </div>
   </div>

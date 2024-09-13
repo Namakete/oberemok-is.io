@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { Badge } from "~/shared/ui/Badge";
+import { Badge } from '~/shared/ui/Badge';
 
 const props: ProjectCardType = defineProps<{
   title: string;

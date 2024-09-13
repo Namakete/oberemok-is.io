@@ -1,1 +1,1 @@
-export { default as AnimatedWrapper } from "./animation-wrapper.vue";
+export { default as AnimatedWrapper } from './animation-wrapper.vue';

@@ -1,7 +1,7 @@
 <script lang="ts" setup>
-import { NavigationItems } from "~/widgets/Header/config";
-import { ThemeSwitcher } from "@/widgets/Switcher";
-import { useRoute } from "vue-router";
+import { NavigationItems } from '~/widgets/Header/config';
+import { ThemeSwitcher } from '@/widgets/Switcher';
+import { useRoute } from 'vue-router';
 
 const route = useRoute();
 </script>
@@ -18,7 +18,9 @@ const route = useRoute();
             :class="{ 'header__nav-item--active': route.path === item.href }"
             class="header__nav-item"
           >
-            <NuxtLink :to="item.href" class="header__nav-link" prefetch>{{ item.title }}</NuxtLink>
+            <NuxtLink :to="item.href" class="header__nav-link" prefetch>{{
+              item.title
+            }}</NuxtLink>
           </li>
         </ul>
       </nav>

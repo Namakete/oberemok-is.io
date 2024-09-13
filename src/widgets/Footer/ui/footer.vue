@@ -1,12 +1,16 @@
 <script lang="ts" setup>
-import { SocialItems } from "~/widgets/Footer/config";
+import { SocialItems } from '~/widgets/Footer/config';
 </script>
 
 <template>
   <footer class="footer">
     <div class="footer__wrapper">
       <ul class="footer__list">
-        <li class="footer__list-item" v-for="(item, index) in SocialItems" :key="index">
+        <li
+          class="footer__list-item"
+          v-for="(item, index) in SocialItems"
+          :key="index"
+        >
           <NuxtLink :to="item.href" class="footer__list-item-title" prefetch>{{
             item.title
           }}</NuxtLink>
@@ -38,7 +42,7 @@ import { SocialItems } from "~/widgets/Footer/config";
 
   &__list-item {
     &:not(:last-child)::after {
-      content: "/";
+      content: '/';
       margin: 0 0.5rem;
     }
   }

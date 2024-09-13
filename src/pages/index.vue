@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import { DefaultLayout } from "@/widgets/Layouts";
-import { ProjectCard } from "@/widgets/Card";
-import { projects } from "@/shared/data";
-import { AnimatedWrapper } from "@/widgets/Wrapper";
+import { DefaultLayout } from '@/widgets/Layouts';
+import { ProjectCard } from '@/widgets/Card';
+import { projects } from '@/shared/data';
+import { AnimatedWrapper } from '@/widgets/Wrapper';
 </script>
 
 <template>

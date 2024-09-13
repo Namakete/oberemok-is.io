@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { DefaultLayout } from "@/widgets/Layouts";
+import { DefaultLayout } from '@/widgets/Layouts';
 </script>
 
 <template>

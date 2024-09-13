@@ -5,15 +5,15 @@ type NaviogationItemType = {
 
 export const NavigationItems: NaviogationItemType[] = [
   {
-    title: "About",
-    href: "/",
+    title: 'About',
+    href: '/'
   },
   {
-    title: "Projects",
-    href: "/projects",
+    title: 'Projects',
+    href: '/projects'
   },
   {
-    title: "Contact",
-    href: "/contact",
-  },
+    title: 'Contact',
+    href: '/contact'
+  }
 ];
