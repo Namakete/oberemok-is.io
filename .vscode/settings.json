@@ -1,0 +1,20 @@
+{
+  "files.exclude": {
+    "**/node_modules": true,
+    "**/.cache": true,
+    "**/.next": true,
+    "**/.nuxt": true,
+    "**/out": true,
+    "**/dist": true,
+    "**/server": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/.cache": true,
+    "**/.next": true,
+    "**/.nuxt": true,
+    "**/out": true,
+    "**/dist": true,
+    "**/server": true
+  }
+}
