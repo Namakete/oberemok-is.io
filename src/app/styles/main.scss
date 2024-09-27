@@ -1,20 +1,20 @@
 // Animations
-@import './animations';
+@use 'animations' as *;
 
 // Base styles
-@import './global';
+@use 'global' as *;
 
 // Mixins
-@import './mixins';
+@use 'mixins' as *;
+
+// Shadows
+@use 'shadows' as *;
 
 // Themes
-@import './themes';
-
-// Typography
-@import './typography';
+@use 'themes' as *;
 
 // Utilities
-@import './utilities';
+@use 'typography' as *;
 
 // Variables
-@import './variables';
+@use 'utilities' as *;

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-const getDelayAnimation = (index: number, delay: number) => ({
+const getDelayAnimation = (index: number, delay: number): Record<string, string> => ({
   animationDelay: `${index * delay}s`
 });
 </script>
@@ -8,10 +8,7 @@ const getDelayAnimation = (index: number, delay: number) => ({
   <div class="animated">
     <div class="animated__wrapper">
       <template v-for="(child, index) in $slots.default?.()" :key="index">
-        <div
-          :style="getDelayAnimation(index, 0.2)"
-          class="animated__wrapper-item"
-        >
+        <div :style="getDelayAnimation(index, 0.2)" class="animated__wrapper-item">
           <component :is="child" />
         </div>
       </template>
@@ -24,19 +21,8 @@ const getDelayAnimation = (index: number, delay: number) => ({
   &__wrapper {
     &-item {
       opacity: 0;
-      transform: translateY(20px);
-      animation: animated__wrapper__slide-in 0.6s ease forwards;
-    }
-
-    @keyframes animated__wrapper__slide-in {
-      0% {
-        opacity: 0;
-        transform: translateY(1rem);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      transform: translateY(1.25rem);
+      animation: var(--animation-duration);
     }
   }
 }

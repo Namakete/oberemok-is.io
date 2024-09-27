@@ -3,22 +3,16 @@ import { Moon, Sun } from 'lucide-vue-next';
 
 const colorMode = useColorMode();
 
-const toggleColorMode = () => {
-  return (colorMode.preference =
-    colorMode.preference === 'light' ? 'dark' : 'light');
-};
+const toggleColorMode = () => (colorMode.preference = colorMode.preference === 'light' ? 'dark' : 'light');
 </script>
 
 <template>
-  <div class="theme-switcher">
+  <button class="theme-switcher">
     <div class="theme-switcher__icon" @click="toggleColorMode">
-      <Moon
-        class="theme-switcher__icon--moon"
-        v-if="colorMode.preference === 'dark'"
-      />
+      <Moon class="theme-switcher__icon--moon" v-if="colorMode.preference === 'dark'" />
       <Sun class="theme-switcher__icon--sun" v-else />
     </div>
-  </div>
+  </button>
 </template>
 
 <style lang="scss" scoped>
@@ -27,18 +21,25 @@ const toggleColorMode = () => {
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
+    height: var(--icon-size-small);
+    width: var(--icon-size-small);
 
     &--moon {
-      color: var(--color-text-primary);
-      height: var(--icon-size-small);
-      width: var(--icon-size-small);
+      color: var(--color-link);
+
+      &:hover {
+        color: var(--color-link-hover);
+        transition: all 0.3s ease;
+      }
     }
 
     &--sun {
-      color: var(--color-text-primary);
-      height: var(--icon-size-small);
-      width: var(--icon-size-small);
+      color: var(--color-link);
+
+      &:hover {
+        color: var(--color-link-hover);
+        transition: all 0.3s ease;
+      }
     }
   }
 }

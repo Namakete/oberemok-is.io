@@ -4,12 +4,13 @@ import { cva, type VariantProps } from 'class-variance-authority';
 const button = cva('button', {
   variants: {
     intent: {
-      primary: 'primary',
-      secondary: 'secondary'
+      primary: 'button__primary',
+      secondary: 'button__secondary'
     },
     size: {
-      small: 'small',
-      medium: 'medium'
+      small: 'button__size-small',
+      medium: 'button__size-medium',
+      large: 'button__size-large'
     }
   },
   compoundVariants: [
@@ -44,43 +45,49 @@ withDefaults(
 <style scoped lang="scss">
 .button {
   display: inline-flex;
-  border-width: 1px;
-  border-style: solid;
-}
 
-.primary {
-  color: rgb(255 255 255);
-  background-color: rgb(59 130 246);
-  border: transparent;
-}
+  &__primary {
+    background-color: rgb(59 130 246);
+    color: rgb(255 255 255);
+    border-color: rgb(59 130 246);
 
-.primary:hover {
-  background-color: rgb(37 99 235);
-}
+    &:hover {
+      background-color: rgb(29 78 216);
+    }
+  }
 
-.secondary {
-  background-color: rgb(255 255 255);
-  color: rgb(31 41 55);
-  border-color: rgb(156 163 175);
-}
+  &__secondary {
+    background-color: rgb(255 255 255);
+    color: rgb(59 130 246);
+    border-color: rgb(59 130 246);
 
-.secondary:hover {
-  background-color: rgb(243 244 246);
-}
+    &:hover {
+      background-color: rgb(243 244 246);
+    }
+  }
 
-.small {
-  font-size: 0.875rem /* 14px */;
-  line-height: 1.25rem /* 20px */;
-  padding: 0.25rem 0.5rem;
-}
+  &__size {
+    &-small {
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+      padding: 0.25rem 0.5rem;
+    }
 
-.medium {
-  font-size: 1rem /* 16px */;
-  line-height: 1.5rem /* 24px */;
-  padding: 0.5rem 1rem;
-}
+    &-medium {
+      font-size: 1rem;
+      line-height: 1.5rem;
+      padding: 0.5rem 1rem;
+    }
 
-.primaryMedium {
-  text-transform: uppercase;
+    &-large {
+      font-size: 1.125rem;
+      line-height: 1.75rem;
+      padding: 0.75rem 1.5rem;
+    }
+
+    &-primaryMedium {
+      text-transform: uppercase;
+    }
+  }
 }
 </style>

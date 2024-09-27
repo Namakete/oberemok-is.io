@@ -20,6 +20,12 @@ body {
 
 a {
   text-decoration: none;
+  color: var(--color-link);
+
+  &:hover {
+    color: var(--color-link-hover);
+    transition: all 0.3s ease;
+  }
 }
 
 h1,
@@ -38,4 +44,10 @@ ul {
 img {
   max-width: 100%;
   height: auto;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
