@@ -4,6 +4,7 @@ declare type BadgeTechnologyType = {
 };
 
 declare type ProjectCardType = {
+  id: number;
   title: string;
   description: string;
   icon: string;

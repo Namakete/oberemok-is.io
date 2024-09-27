@@ -1,11 +1,8 @@
 <script lang="ts" setup>
 import { Badge } from '~/shared/ui/Badge';
 
-const props: ProjectCardType = defineProps<{
-  title: string;
-  description: string;
-  icon: string;
-  technology: BadgeTechnologyType[];
+const props = defineProps<{
+  item: ProjectCardType | null;
 }>();
 </script>
 
@@ -13,16 +10,21 @@ const props: ProjectCardType = defineProps<{
   <div class="card">
     <div class="card__wrapper">
       <header class="card__header">
-        <div class="card__icon">{{ props.icon }}</div>
+        <div class="card__icon">{{ props.item?.icon }}</div>
         <div class="card__header__content">
-          <h1 class="card__content__title">{{ props.title }}</h1>
+          <h1 class="card__content__title">{{ props.item?.title }}</h1>
           <p class="card__content__description">
-            {{ props.description }}
+            {{ props.item?.description }}
           </p>
         </div>
       </header>
       <div class="card__tech">
-        <Badge v-for="(item, index) in props.technology" :key="index" :icon="item.icon" :label="item.label" />
+        <Badge
+          v-for="(tag, index) in props.item?.technology"
+          :key="index"
+          :icon="tag.icon"
+          :label="tag.label"
+        />
       </div>
     </div>
   </div>

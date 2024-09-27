@@ -1,8 +1,32 @@
+Правильно ли я использую onMounted ?
+
 <script lang="ts" setup>
 import { DefaultLayout } from '@/widgets/Layouts';
 import { AnimatedWrapper } from '@/widgets/Wrapper';
-import { projects } from '@/shared/data';
 import { ProjectCard } from '@/widgets/Card';
+import projectsData from '@/app/data/project-data.json';
+import projectsPinnedData from '@/app/data/project-pinned-data.json';
+import { notNullable } from '~/shared/libs';
+
+const getProjectsData = ref<ProjectCardType[]>([]);
+
+const fetchProjectsData = () => {
+  try {
+    getProjectsData.value = projectsData;
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+const pinnedProjects = computed(() => {
+  return getProjectsData.value
+    .filter((item) => notNullable(item.id))
+    .filter((item) => projectsPinnedData.projects.includes(item.id));
+});
+
+onMounted(() => {
+  fetchProjectsData();
+});
 </script>
 
 <template>
@@ -24,15 +48,9 @@ import { ProjectCard } from '@/widgets/Card';
         <div class="section__wrapper">
           <div class="section__wrapper-title">Featured Projects</div>
           <div class="section__wrapper-projects">
-            <ProjectCard
-              class="section__wrapper-projects-card"
-              v-for="(project, index) in projects"
-              :key="index"
-              :title="project.title"
-              :description="project.description"
-              :icon="project.icon"
-              :technology="project.technology"
-            />
+            <div v-for="(item, index) in pinnedProjects" :key="index">
+              <ProjectCard class="section__wrapper-projects-card" :item="item" />
+            </div>
           </div>
         </div>
       </section>
